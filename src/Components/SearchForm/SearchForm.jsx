@@ -1,5 +1,4 @@
-import { Field, Form, Formik } from "formik";
-import { IoIosSearch } from "react-icons/io";
+import { Formik } from "formik";
 
 import * as SC from "../StyledComponents"
 

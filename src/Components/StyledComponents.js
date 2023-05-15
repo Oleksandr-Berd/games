@@ -1,8 +1,10 @@
+import { Field, Form } from "formik";
 import { NavLink } from "react-router-dom";
+import { IoIosSearch } from "react-icons/io";
+
 
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
-import theme from "../utilities/theme";
 
 export const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -136,3 +138,23 @@ export const HomePageTitle = styled.h1`
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
+
+export const FormSearch = styled(Form)`
+position: relative;
+`
+
+export const SearchIcon = styled(IoIosSearch)`
+position: absolute;
+top: 0;
+left:0;
+transform: translateY(35%) translateX(25%);
+`
+
+export const SearchInput = styled(Field)`
+  padding-left: ${(props) => props.theme.spacing[9] + "px"};
+  padding-top: ${(props) => props.theme.spacing[2] + "px"};
+  padding-bottom: ${(props) => props.theme.spacing[2] + "px"};
+
+  font-size: ${props => props.theme.listText.fontSizeM};
+`;
+

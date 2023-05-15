@@ -2,13 +2,16 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { FidgetSpinner } from "react-loader-spinner";
 
+import * as SC from "../StyledComponents"
 import Header from "../Header/Header";
+import SideBar from "../SideBar/SideBar";
 
 
 const SharedLayout = () => {
   return (
     <>
       <Header />
+
       <Suspense
         fallback={
           <div>
@@ -25,7 +28,10 @@ const SharedLayout = () => {
           </div>
         }
       >
-        <Outlet />
+        <SC.SharedCon>
+          <SideBar />
+          <Outlet />
+        </SC.SharedCon>
       </Suspense>
     </>
   );

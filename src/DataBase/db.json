@@ -1,0 +1,25 @@
+{
+  "sideBar": {
+    "overall": [
+      { "destination": "home", "name": "Home" },
+      { "destination": "user", "name": "User" },
+      { "destination": "user", "name": "User" },
+      { "destination": "new", "name": "New Realizes" },
+      { "destination": "top", "name": "Top" },
+      { "destination": "all", "name": "All Games" },
+      { "destination": "browse", "name": "Browse" }
+    ],
+    "new": [
+      { "destination": "last30", "name": "Last 30 days", "icon": "#" },
+      { "destination": "this", "name": "This Week", "icon": "#" },
+      { "destination": "next", "name": "Next Week", "icon": "#" },
+      { "destination": "calendar", "name": "Realize Calendar", "icon": "#" }
+    ],
+    "top": [
+      { "destination": "best", "name": "Best of the Year", "icon": "#" },
+      { "destination": "popular", "name": "Popular in 2023", "icon": "#" },
+      { "destination": "all250", "name": "All Time Top 250", "icon": "#" }
+    ],
+    "browse": [{ "destination": "platform", "name": "Platform", "icon": "#" }]
+  }
+}

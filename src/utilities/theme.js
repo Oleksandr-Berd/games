@@ -1,5 +1,5 @@
 const theme = {
-  spacing: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 64, 128],
+  spacing: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 64, 128, 256, 312, 512],
   percentage: [
     "10%",
     "15%",
@@ -12,10 +12,10 @@ const theme = {
     "80%",
     "90%",
     "100%",
-    ],
-  
-    transition: {
-      color:"color 300ms ease"
+  ],
+
+  transition: {
+    color: "color 300ms ease",
   },
 
   flex: {
@@ -64,6 +64,8 @@ const theme = {
 
     lineHeightM: 1.4,
   },
+
+  radius: [4, 8, 12, 16, 20, 50], 
 };
 
 export default theme;

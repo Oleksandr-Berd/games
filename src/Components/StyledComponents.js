@@ -2,7 +2,6 @@ import { Field, Form } from "formik";
 import { NavLink } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 
-
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
@@ -32,6 +31,7 @@ export const Header = styled.header`
   display: ${(props) => props.theme.flex.display};
   justify-content: ${(props) => props.theme.flex.justifyContent[1]};
   padding-top: ${(props) => props.theme.spacing[7] + "px"};
+  padding-bottom: ${(props) => props.theme.spacing[7] + "px"};
   padding-left: ${(props) => props.theme.spacing[9] + "px"};
   padding-right: ${(props) => props.theme.spacing[11] + "px"};
 `;
@@ -57,9 +57,9 @@ export const Link = styled(NavLink)`
 
   transition: ${(props) => props.theme.transition.color};
 
-  &:hover {
+  &:hover, &:focus {
     color: ${(props) => props.theme.color.hover};
-    
+
     transition: ${(props) => props.theme.transition.color};
   }
 `;
@@ -74,6 +74,10 @@ export const Layout = styled.div`
   background-color: ${(props) => props.theme.color.main};
 `;
 
+export const SharedCon = styled.div`
+display: ${props => props.theme.flex.display}
+`
+
 export const HomePage = styled.div`
   display: ${(props) => props.theme.grid.display};
   grid-template-columns: repeat(2, 1fr);
@@ -86,15 +90,15 @@ export const HomePage = styled.div`
   padding-top: ${(props) => props.theme.spacing[9] + "px"};
   padding-bottom: ${(props) => props.theme.spacing[9] + "px"};
 
-  background:${props => props.theme.background.bloody}
+  background: ${(props) => props.theme.background.bloody};
 `;
 
 export const GridPanelFirst = styled.div`
   display: grid;
-  gap: ${props => props.theme.spacing[6]+"px"};
+  gap: ${(props) => props.theme.spacing[6] + "px"};
   grid-template-rows: 1fr 2fr;
-  justify-items: ${props => props.theme.grid.justifyItems[0]};
-  min-height: ${props => props.theme.percentage[10]};
+  justify-items: ${(props) => props.theme.grid.justifyItems[0]};
+  min-height: ${(props) => props.theme.percentage[10]};
 `;
 
 export const GridPanelSecond = styled.div`
@@ -109,7 +113,7 @@ export const GridPanelSecond = styled.div`
 export const GridPanelSmall = styled.div`
   grid-auto-rows: 2fr;
 
-  padding-left: ${props => props.theme.spacing[10]+"px"};
+  padding-left: ${(props) => props.theme.spacing[10] + "px"};
 `;
 
 export const GridPanelTall = styled.div`
@@ -141,21 +145,39 @@ export const HomePageTitle = styled.h1`
 `;
 
 export const FormSearch = styled(Form)`
-position: relative;
-`
+  position: relative;
+`;
 
 export const SearchIcon = styled(IoIosSearch)`
-position: absolute;
-top: 0;
-left:0;
-transform: translateY(35%) translateX(25%);
-`
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(30%) translateX(25%);
+`;
 
 export const SearchInput = styled(Field)`
+  width: ${(props) => props.theme.spacing[14] + "px"};
   padding-left: ${(props) => props.theme.spacing[9] + "px"};
   padding-top: ${(props) => props.theme.spacing[2] + "px"};
   padding-bottom: ${(props) => props.theme.spacing[2] + "px"};
 
-  font-size: ${props => props.theme.listText.fontSizeM};
+  background-color: #fdf5e6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+  transition: box-shadow 300ms ease;
+  font-size: ${(props) => props.theme.listText.fontSizeM};
+  border-radius: ${(props) => props.theme.radius[4] + "px"};
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 30px rgba(255, 255, 255, 0.3), 0 0 45px rgba(255, 255, 255, 0.1);
+  }
 `;
 
+export const SideBar = styled.div`
+  width: 250px;
+  background-color: ${props=> props.theme.color.main};
+`;

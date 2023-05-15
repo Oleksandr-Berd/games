@@ -133,7 +133,8 @@ export const HomePageTitle = styled.h1`
   font-family: ${(props) => props.theme.listText.fontFamilyTitle};
   font-size: ${(props) => props.theme.listText.fontSizeL};
 
-  background:${(props) => props.theme.background.bloodyText};
+  background: ${(props) => props.theme.background.bloodyText};
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

@@ -36,6 +36,7 @@ export const PlatformContainer = styled.div`
   display: ${(props) => props.theme.flex.display};
   flex-direction: ${(props) => props.theme.flex.flexDirection[0]};
   justify-content: ${(props) => props.theme.flex.justifyContent[1]};
+  align-items: ${props => props.theme.flex.alignItems[2]};
 `;
 
 export const PlatformsList = styled.ul`
@@ -49,6 +50,38 @@ export const PlatformItem = styled.li`
   }
 `;
 
+export const Rating = styled.p`
+  padding-top: ${(props) => props.theme.spacing[1] + "px"};
+  padding-bottom: ${(props) => props.theme.spacing[1] + "px"};
+  padding-right: ${(props) => props.theme.spacing[2] + "px"};
+  padding-left: ${(props) => props.theme.spacing[2] + "px"};
+
+  color: ${(props) =>
+    props.calculatedRating > 80
+      ? props.theme.color.high
+      : props.calculatedRating < 60
+      ? props.theme.color.poor
+      : props.theme.color.average};
+
+  border: 1px solid
+    ${(props) =>
+      props.calculatedRating > 80
+        ? props.theme.color.high
+        : props.calculatedRating < 60
+        ? props.theme.color.poor
+        : props.theme.color.average};
+
+  font-weight: ${(props) => props.theme.listText.fontWeightBold};
+  font-size: ${(props) => props.theme.listText.fontSizeXS};
+  box-shadow: 0 0 5px
+    ${(props) =>
+      props.calculatedRating > 80
+        ? props.theme.color.high
+        : props.calculatedRating < 60
+        ? props.theme.color.poor
+        : props.theme.color.average};
+`;
+
 export const AllGamesItemTopContainer = styled.div`
   margin-left: ${(props) => props.theme.spacing[4] + "px"};
   margin-right: ${(props) => props.theme.spacing[4] + "px"};
@@ -57,6 +90,8 @@ export const AllGamesItemTopContainer = styled.div`
 
 export const AllGameItemTitle = styled.h4`
   margin-left: ${(props) => props.theme.spacing[4] + "px"};
+  margin-bottom: ${(props) => props.theme.spacing[4] + "px"};
+
   font-weight: ${(props) => props.theme.listText.fontWeightBold};
   font-size: ${(props) => props.theme.listText.fontSizeS};
   font-family: ${(props) => props.theme.listText.fontFamilyTitle};

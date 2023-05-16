@@ -19,10 +19,10 @@ const theme = {
   },
 
   flex: {
-      display: "flex",
-      flexDirection: ["row", "column"],
+    display: "flex",
+    flexDirection: ["row", "column"],
     justifyContent: ["center", "space-between", "space-around"],
-    alignItems: ["flex-end", "flex-start"],
+    alignItems: ["flex-end", "flex-start", "center"],
   },
 
   grid: {
@@ -41,6 +41,9 @@ const theme = {
     text: "#E4E4D4",
     logo: "#d92229",
     hover: "#D48215",
+    average: "#ffd700",
+    high: "#3CB371",
+    poor: "#FF5733",
   },
 
   listText: {
@@ -62,6 +65,7 @@ const theme = {
     fontSizeXM: "36px",
     fontSizeM: "24px",
     fontSizeS: "20px",
+    fontSizeXS: "16px",
 
     lineHeightM: 1.4,
   },

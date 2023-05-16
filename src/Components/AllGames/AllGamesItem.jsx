@@ -5,7 +5,8 @@ import { BsPlaystation } from "react-icons/bs";
 import { RiXboxLine } from "react-icons/ri";
 import { AiOutlineApple } from "react-icons/ai";
 import { FcLinux } from "react-icons/fc";
-  
+import { SiNintendo3Ds } from "react-icons/si";
+
 const AllGamesItem = ({
   image,
   name,
@@ -22,53 +23,60 @@ const AllGamesItem = ({
       <SC.AllGameItemImage src={image} alt="" />
 
       <SC.AllGamesItemTopContainer>
-              <SC.PlatformContainer>
-                  <SC.PlatformsList>{parentPlatform.map(el => {
-                      switch (el.platform.slug) {
-                        case "pc":
-                          return (
-                            <SC.PlatformItem>
-                              <TfiMicrosoft />
-                            </SC.PlatformItem>
-                          );
+        <SC.PlatformContainer>
+          <SC.PlatformsList>
+            {parentPlatform.map((el) => {
+              switch (el.platform.slug) {
+                case "pc":
+                  return (
+                    <SC.PlatformItem key={el.platform.slug}>
+                      <TfiMicrosoft />
+                    </SC.PlatformItem>
+                  );
 
-                        case "playstation":
-                          return (
-                            <SC.PlatformItem>
-                              <BsPlaystation />
-                            </SC.PlatformItem>
-                          );
+                case "playstation":
+                  return (
+                    <SC.PlatformItem key={el.platform.slug}>
+                      <BsPlaystation />
+                    </SC.PlatformItem>
+                  );
 
-                        case "xbox":
-                          return (
-                            <SC.PlatformItem>
-                              <RiXboxLine />
-                            </SC.PlatformItem>
-                          );
+                case "xbox":
+                  return (
+                    <SC.PlatformItem key={el.platform.slug}>
+                      <RiXboxLine />
+                    </SC.PlatformItem>
+                  );
 
-                        case "mac":
-                          return (
-                            <SC.PlatformItem>
-                              <AiOutlineApple />
-                            </SC.PlatformItem>
-                          );
+                case "mac":
+                  return (
+                    <SC.PlatformItem key={el.platform.slug}>
+                      <AiOutlineApple />
+                    </SC.PlatformItem>
+                  );
 
-                        case "linux":
-                          return (
-                            <SC.PlatformItem>
-                              <FcLinux />
-                            </SC.PlatformItem>
-                          );
+                case "linux":
+                  return (
+                    <SC.PlatformItem key={el.platform.slug}>
+                      <FcLinux />
+                    </SC.PlatformItem>
+                  );
 
-                          default:
-                              return (
-                                <SC.PlatformItem>
-                                  <AiOutlineApple />
-                                </SC.PlatformItem>
-                              );;
-                      }
-                  }) }</SC.PlatformsList>
-          <p>{calculatedRating}</p>
+                case "nintendo":
+                  return (
+                    <SC.PlatformItem key={el.platform.slug}>
+                      <SiNintendo3Ds />
+                    </SC.PlatformItem>
+                  );
+
+                default:
+                  return null
+              }
+            })}
+          </SC.PlatformsList>
+          <SC.Rating calculatedRating={calculatedRating}>
+            {calculatedRating}
+          </SC.Rating>
         </SC.PlatformContainer>
       </SC.AllGamesItemTopContainer>
       <SC.AllGameItemTitle>{name}</SC.AllGameItemTitle>

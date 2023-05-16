@@ -1,8 +1,8 @@
 {
-  "sideBar": {
+  "data": {
     "overall": [
       { "destination": "home", "name": "Home" },
-      { "destination": "user", "name": "User" },
+      { "destination": "reviews", "name": "Reviews" },
       { "destination": "user", "name": "User" },
       { "destination": "new", "name": "New Realizes" },
       { "destination": "top", "name": "Top" },

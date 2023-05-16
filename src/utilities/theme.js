@@ -52,20 +52,20 @@ const theme = {
     fontWeightBold: "800",
     fontWeightNormal: "500",
 
-    fontSizeNormal: "24px",
-
     fontStyleItalic: "italic",
 
     fontFamilyTitle: "Caveat",
     fontFamilyText: "Montserrat",
 
     fontSizeL: "72px",
+    fontSizeXM: "36px",
     fontSizeM: "24px",
+    fontSizeS: "20px",
 
     lineHeightM: 1.4,
   },
 
-  radius: [4, 8, 12, 16, 20, 50], 
+  radius: [4, 8, 12, 16, 20, 50],
 };
 
 export default theme;

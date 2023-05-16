@@ -25,6 +25,11 @@ h1, h2, h3, h4 , h5 ,h6{
 span, p, a{
   margin: ${(props) => props.theme.spacing[0]};
 }
+
+ul{
+  padding: ${props => props.theme.spacing[0]};
+  list-style: ${props => props.theme.listText.listStyle}
+}
 `;
 
 export const Header = styled.header`
@@ -103,7 +108,7 @@ export const GridPanelFirst = styled.div`
 
 export const GridPanelSecond = styled.div`
   display: grid;
-  gap: 24px;
+   gap: ${(props) => props.theme.spacing[6] + "px"};
 
   grid-template-rows: 2fr 1fr;
   min-height: ${(props) => props.theme.percentage[10]};
@@ -178,6 +183,42 @@ export const SearchInput = styled(Field)`
 `;
 
 export const SideBar = styled.div`
-  width: 250px;
+  min-width: ${props => props.theme.spacing[12]+"px"};
+padding-left: ${props => props.theme.spacing[8]+"px"};
+
   background-color: ${props=> props.theme.color.main};
 `;
+
+export const SideBarItem = styled.li`
+  &:not(:last-child) {
+    margin-bottom: ${(props) => props.theme.spacing[9] + "px"};
+  }
+`;
+
+export const SideBarTitleLink = styled(NavLink)`
+text-decoration: ${props => props.theme.listText.textDecor};
+color: ${props => props.theme.color.text};
+font-size: ${props => props.theme.listText.fontSizeXM};
+font-family: ${props => props.theme.listText.fontFamilyText};
+line-height: ${props => props.theme.listText.lineHeightM};
+font-weight: ${props => props.theme.listText.fontWeightBold};
+`;
+
+export const SubListSideBar = styled.ul`
+  margin-top: ${(props) => props.theme.spacing[8] + "px"};
+`;
+
+export const SubItemSideBar = styled.li`
+  &:not(:last-child) {
+    margin-bottom: ${(props) => props.theme.spacing[8] + "px"};
+  }
+`;
+
+export const SubLinkSideBar = styled(NavLink)`
+  text-decoration: ${(props) => props.theme.listText.textDecor};
+  color: ${(props) => props.theme.color.text};
+  font-size: ${(props) => props.theme.listText.fontSizeS};
+  font-family: ${(props) => props.theme.listText.fontFamilyText};
+  font-weight: ${(props) => props.theme.listText.fontWeightNormal};
+`;
+

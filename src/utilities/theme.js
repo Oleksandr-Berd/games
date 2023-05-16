@@ -19,8 +19,9 @@ const theme = {
   },
 
   flex: {
-    display: "flex",
-    justifyContent: ["center", "space-between"],
+      display: "flex",
+      flexDirection: ["row", "column"],
+    justifyContent: ["center", "space-between", "space-around"],
     alignItems: ["flex-end", "flex-start"],
   },
 

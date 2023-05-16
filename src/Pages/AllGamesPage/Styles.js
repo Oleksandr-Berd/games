@@ -7,7 +7,7 @@ export const AllGameContainer = styled.div`
   align-items: center;
   margin-right: auto;
   margin-left: auto;
-  padding-right: ${props=>props.theme.spacing[7]+"px"};
+  padding-right: ${(props) => props.theme.spacing[7] + "px"};
 `;
 
 export const AllGamesList = styled.ul`
@@ -25,15 +25,33 @@ export const AllGamesItem = styled.li`
 `;
 
 export const AllGameItemImage = styled.img`
-width: ${props =>props.theme.percentage[10]};
+  width: ${(props) => props.theme.percentage[10]};
   height: 224px;
   margin-bottom: ${(props) => props.theme.spacing[3] + "px"};
 
   border-radius: ${(props) => props.theme.radius[1] + "px"};
 `;
 
+export const PlatformContainer = styled.div`
+  display: ${(props) => props.theme.flex.display};
+  flex-direction: ${(props) => props.theme.flex.flexDirection[0]};
+  justify-content: ${(props) => props.theme.flex.justifyContent[1]};
+`;
+
+export const PlatformsList = styled.ul`
+  display: ${(props) => props.theme.flex.display};
+  flex-direction: ${(props) => props.theme.flex.flexDirection[0]};
+`;
+
+export const PlatformItem = styled.li`
+  &:not(:last-child) {
+    margin-right: ${(props) => props.theme.spacing[2] + "px"};
+  }
+`;
+
 export const AllGamesItemTopContainer = styled.div`
   margin-left: ${(props) => props.theme.spacing[4] + "px"};
+  margin-right: ${(props) => props.theme.spacing[4] + "px"};
   margin-bottom: ${(props) => props.theme.spacing[2] + "px"};
 `;
 
@@ -41,6 +59,6 @@ export const AllGameItemTitle = styled.h4`
   margin-left: ${(props) => props.theme.spacing[4] + "px"};
   font-weight: ${(props) => props.theme.listText.fontWeightBold};
   font-size: ${(props) => props.theme.listText.fontSizeS};
-font-family: ${props => props.theme.listText.fontFamilyTitle};
-font-style: ${props=> props.theme.listText.fontStyleItalic};
+  font-family: ${(props) => props.theme.listText.fontFamilyTitle};
+  font-style: ${(props) => props.theme.listText.fontStyleItalic};
 `;

@@ -20,6 +20,7 @@ export const AllGamesItem = styled.li`
   padding-bottom: ${(props) => props.theme.spacing[5] + "px"};
 
   color: ${(props) => props.theme.color.text};
+  background-color: ${props => props.theme.color.item};
   border-radius: ${(props) => props.theme.radius[1] + "px"};
   box-shadow: 0 2px 6px rgba(255, 0, 0, 0.8);
 `;
@@ -96,4 +97,19 @@ export const AllGameItemTitle = styled.h4`
   font-size: ${(props) => props.theme.listText.fontSizeS};
   font-family: ${(props) => props.theme.listText.fontFamilyTitle};
   font-style: ${(props) => props.theme.listText.fontStyleItalic};
+`;
+
+export const AllGamesItemRateCon = styled.div`
+  display: ${(props) => props.theme.inlineFlex.display};
+  justify-content: ${(props) => props.theme.flex.justifyContent[0]};
+  align-items: ${(props) => props.theme.flex.alignItems[2]};
+  padding-left: ${(props) => props.theme.spacing[3] + "px"};
+  padding-right: ${(props) => props.theme.spacing[5] + "px"};
+  padding-top: ${(props) => props.theme.spacing[1] + "px"};
+  padding-bottom: ${(props) => props.theme.spacing[1] + "px"};
+  margin-left: ${(props) => props.theme.spacing[3] + "px"};
+
+  border-radius: ${(props) => props.theme.radius[2] + "px"};
+
+  background-color: ${(props) => props.theme.color.rate};
 `;

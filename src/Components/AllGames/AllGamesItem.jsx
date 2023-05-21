@@ -6,6 +6,7 @@ import { RiXboxLine } from "react-icons/ri";
 import { AiOutlineApple } from "react-icons/ai";
 import { FcLinux } from "react-icons/fc";
 import { SiNintendo3Ds } from "react-icons/si";
+import { CgMathPlus } from "react-icons/cg";
 
 const AllGamesItem = ({
   image,
@@ -81,9 +82,10 @@ const AllGamesItem = ({
       </SC.AllGamesItemTopContainer>
       <SC.AllGameItemTitle>{name}</SC.AllGameItemTitle>
 
-      <div>
+          <SC.AllGamesItemRateCon>
+              <CgMathPlus/>
         <p>{ratingsCount}</p>
-      </div>
+      </SC.AllGamesItemRateCon>
     </SC.AllGamesItem>
   );
 };

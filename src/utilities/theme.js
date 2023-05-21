@@ -18,6 +18,10 @@ const theme = {
     color: "color 300ms ease",
   },
 
+  inlineFlex: {
+    display: "inline-flex",
+  },
+
   flex: {
     display: "flex",
     flexDirection: ["row", "column"],
@@ -44,6 +48,8 @@ const theme = {
     average: "#ffd700",
     high: "#3CB371",
     poor: "#FF5733",
+    rate: "#808080",
+    item: "#555555",
   },
 
   listText: {

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const AllGameContainer = styled.div`
@@ -23,6 +24,13 @@ export const AllGamesItem = styled.li`
   background-color: ${(props) => props.theme.color.item};
   border-radius: ${(props) => props.theme.radius[1] + "px"};
   box-shadow: 0 2px 6px rgba(255, 0, 0, 0.8);
+`;
+
+export const AllGamesLink = styled(NavLink)`
+  text-decoration: ${(props) => props.theme.listText.textDecor};
+
+  color: ${(props) => props.theme.color.text};
+  background-color: ${(props) => props.theme.color.item};
 `;
 
 export const AllGameItemImage = styled.img`

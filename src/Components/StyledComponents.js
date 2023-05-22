@@ -56,7 +56,6 @@ export const Link = styled(NavLink)`
   text-decoration: ${(props) => props.theme.listText.textDecor};
   color: ${(props) => props.theme.color.text};
   font-weight: ${(props) => props.theme.listText.fontWeightBold};
-  font-size: ${(props) => props.theme.fontSizeNormal};
   font-family: ${(props) => props.theme.listText.fontFamilyText};
   font-size: ${(props) => props.theme.listText.fontSizeM};
 

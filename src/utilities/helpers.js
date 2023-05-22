@@ -12,3 +12,12 @@ export const getAllGames = async (page = 1, limit = 6) => {
         return error
     }
 }
+
+export const getGameById = async (id) => {
+    try {
+        const response = await axios.get(`${BASE_URL}games/${id}?key=${API_KEY}`)
+         return response.data;
+    } catch (error) {
+        return error
+    }
+}

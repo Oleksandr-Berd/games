@@ -20,7 +20,7 @@ export const AllGamesItem = styled.li`
   padding-bottom: ${(props) => props.theme.spacing[5] + "px"};
 
   color: ${(props) => props.theme.color.text};
-  background-color: ${props => props.theme.color.item};
+  background-color: ${(props) => props.theme.color.item};
   border-radius: ${(props) => props.theme.radius[1] + "px"};
   box-shadow: 0 2px 6px rgba(255, 0, 0, 0.8);
 `;
@@ -37,7 +37,7 @@ export const PlatformContainer = styled.div`
   display: ${(props) => props.theme.flex.display};
   flex-direction: ${(props) => props.theme.flex.flexDirection[0]};
   justify-content: ${(props) => props.theme.flex.justifyContent[1]};
-  align-items: ${props => props.theme.flex.alignItems[2]};
+  align-items: ${(props) => props.theme.flex.alignItems[2]};
 `;
 
 export const PlatformsList = styled.ul`
@@ -74,13 +74,13 @@ export const Rating = styled.p`
 
   font-weight: ${(props) => props.theme.listText.fontWeightBold};
   font-size: ${(props) => props.theme.listText.fontSizeXS};
-  box-shadow: 0 0 5px
-    ${(props) =>
-      props.calculatedRating > 80
-        ? props.theme.color.high
-        : props.calculatedRating < 60
-        ? props.theme.color.poor
-        : props.theme.color.average};
+  box-shadow: 0 0 5px;
+  ${(props) =>
+    props.calculatedRating > 80
+      ? props.theme.color.high
+      : props.calculatedRating < 60
+      ? props.theme.color.poor
+      : props.theme.color.average};
 `;
 
 export const AllGamesItemTopContainer = styled.div`
@@ -112,4 +112,39 @@ export const AllGamesItemRateCon = styled.div`
   border-radius: ${(props) => props.theme.radius[2] + "px"};
 
   background-color: ${(props) => props.theme.color.rate};
+`;
+
+export const ButtonContainer = styled.div`
+  display: ${(props) => props.theme.flex.display};
+  align-items: ${(props) => props.theme.flex.alignItems[2]};
+
+  color: ${(props) => props.theme.color.text};
+  font-size: ${(props) => props.theme.listText.fontSizeM};
+  font-weight: ${(props) => props.theme.listText.fontWeightBold};
+  font-style: ${(props) => props.theme.listText.fontStyleItalic};
+`;
+
+export const Button = styled.button`
+  padding-right: ${(props) => props.theme.spacing[6] + "px"};
+  padding-left: ${(props) => props.theme.spacing[6] + "px"};
+  padding-top: ${(props) => props.theme.spacing[2] + "px"};
+  padding-bottom: ${(props) => props.theme.spacing[2] + "px"};
+
+  color: ${(props) =>
+    props.disabled === true ? props.theme.color.item : props.theme.color.text};
+  background-color: ${(props) => props.theme.color.main};
+  font-size: ${(props) => props.theme.listText.fontSizeM};
+  font-weight: ${(props) => props.theme.listText.fontWeightBold};
+  font-style: ${(props) => props.theme.listText.fontStyleItalic};
+
+  border: none;
+  cursor: pointer;
+  transition: ${(props) => props.theme.transition.color};
+
+  &:hover,
+  &:focus {
+    color: ${(props) =>
+      props.disabled ? props.theme.color.item : props.theme.color.hover};
+    transition: ${(props) => props.theme.transition.color};
+  }
 `;

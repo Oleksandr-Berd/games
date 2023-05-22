@@ -56,19 +56,20 @@ const AllGamesPage = () => {
       ) : (
         <>
           <AllGamesList games={games} />
-          <div>
-            <button
+          <SC.ButtonContainer>
+            <SC.Button
               type="button"
               id="prevButton"
               onClick={handlePage}
               disabled={page === 1}
             >
               Prev
-            </button>
-            <button type="button" id="nextButton" onClick={handlePage}>
+              </SC.Button>
+              <p>--{page}--</p>
+            <SC.Button type="button" id="nextButton" onClick={handlePage}>
               Next
-            </button>
-          </div>
+            </SC.Button>
+          </SC.ButtonContainer>
         </>
       )}
       {error && <div>{error}</div>}

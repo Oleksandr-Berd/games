@@ -1,7 +1,6 @@
 import sideBar from "../../DataBase/db.json"
 import SideBarItem from "./SideBarItem";
 
-
 const SideBarList = () => {
 
     const {overall} = sideBar.data

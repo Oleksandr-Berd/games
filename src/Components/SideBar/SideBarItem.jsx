@@ -1,6 +1,6 @@
 import sideBar from "../../DataBase/db.json";
 
-import * as SC from "../StyledComponents";
+import * as SC from "./Styles";
 
 const SideBarItem = ({ destination, name }) => {
   const { data } = sideBar;

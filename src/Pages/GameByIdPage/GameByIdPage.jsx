@@ -8,7 +8,8 @@ const GameByIdPage = () => {
      const { id } = useParams();
      const [game, setGame] = useState({});
 
-    const { background_image, name, description } = game;
+    const { background_image, name, description, background_image_additional } =
+      game;
     
       useEffect(() => {
           getGameById(id).then(setGame);
@@ -28,7 +29,10 @@ const GameByIdPage = () => {
     return (
       <SC.Container>
         <SC.Image src={background_image} alt={name} />
-        <SC.Title>{name}</SC.Title>
+        <SC.TitleContainer>
+          <SC.Title>{name}</SC.Title>
+          <SC.ImageAdd src={background_image_additional} alt={name} />
+        </SC.TitleContainer>
         <SC.Description>{modifiedStr}</SC.Description>
       </SC.Container>
     );

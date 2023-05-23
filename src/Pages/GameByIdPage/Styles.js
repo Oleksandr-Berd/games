@@ -12,6 +12,17 @@ margin-bottom: ${props => props.theme.spacing[9] + "px"};
 border-radius: ${props => props.theme.radius[2]+"px"};
 `
 
+export const TitleContainer = styled.div`
+display: flex;
+flex-direction: row;
+`
+
+export const ImageAdd = styled.img`
+  max-width: ${(props) => props.theme.percentage[7]};
+
+  border-radius: ${(props) => props.theme.radius[2] + "px"};
+`;
+
 export const Title = styled.h2`
 color: ${props => props.theme.color.text};
 font-family: ${props => props.theme.listText.fontFamilyTitle};

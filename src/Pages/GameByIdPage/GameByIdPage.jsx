@@ -15,14 +15,21 @@ const GameByIdPage = () => {
           
          
       }, [id]);
+    const symbol = "<p>";
+    const symbolToDelete = "</p>";
+   
+
+
+    let modifiedStr = description
+      ?.replace(new RegExp(symbol, "g"), "")
+      .replace(new RegExp(symbolToDelete, "g"), "");
     
-     
     
     return (
       <SC.Container>
-            <SC.Image src={background_image} alt={name} />
-            <SC.Title>{name}</SC.Title>
-            <SC.Description>{description}</SC.Description>
+        <SC.Image src={background_image} alt={name} />
+        <SC.Title>{name}</SC.Title>
+        <SC.Description>{modifiedStr}</SC.Description>
       </SC.Container>
     );
     

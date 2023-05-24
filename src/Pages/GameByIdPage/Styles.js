@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -13,6 +14,8 @@ border-radius: ${props => props.theme.radius[2]+"px"};
 `
 
 export const TitleContainer = styled.div`
+position: relative;
+
   display: ${(props) => props.theme.flex.display};
   flex-direction: ${(props) => props.theme.flex.flexDirection[0]};
   justify-content: ${(props) => props.theme.flex.justifyContent[1]};
@@ -22,10 +25,21 @@ export const TitleContainer = styled.div`
 `;
 
 export const LeftSideContainer = styled.div`
-text-align: ${props => props.theme.listText.textAlignLeft};
-`
+  text-align: ${(props) => props.theme.listText.textAlignLeft};
+  color: ${(props) => props.theme.color.text};
+  font-family: ${(props) => props.theme.listText.fontFamilyText};
+
+  & > *{
+    margin-bottom: ${props => props.theme.spacing[4] + "px"}
+  }
+`;
 
 export const ImageAdd = styled.img`
+position: absolute;
+top: 0;
+right: 0;
+transform: translateY(-50%) translateX(-5%);
+
   max-width: ${(props) => props.theme.percentage[6]};
 
   border-radius: ${(props) => props.theme.radius[4] + "px"};
@@ -37,6 +51,16 @@ font-family: ${props => props.theme.listText.fontFamilyTitle};
 font-size: ${props => props.theme.listText.fontSizeXM};
 font-style: ${props => props.theme.listText.fontStyleItalic};
 `
+
+export const WebLink = styled(NavLink)`
+display: inline-block;
+ margin-bottom: ${(props) => props.theme.spacing[4] + "px"};
+
+  text-decoration: none;
+  color: ${(props) => props.theme.color.text};
+  font-family: ${(props) => props.theme.listText.fontFamilyText};
+  font-style: ${props => props.theme.listText.fontStyleItalic};
+`;
 
 export const GenresList = styled.ul`
   display: ${(props) => props.theme.grid.display};

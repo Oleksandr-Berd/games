@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 import { getGameById } from "../../utilities/helpers";
 import * as SC from "./Styles";
@@ -14,6 +14,9 @@ const GameByIdPage = () => {
     description,
     background_image_additional,
     genres,
+    released,
+      website,
+    developers,
   } = game;
 
   useEffect(() => {
@@ -32,12 +35,18 @@ const GameByIdPage = () => {
       <SC.TitleContainer>
         <SC.LeftSideContainer>
           <SC.Title>{name}</SC.Title>
+          <p>Released: {released}</p>
+          <SC.WebLink to={website}>Website: {website}</SC.WebLink>
           <SC.GenresTitle>Genres:</SC.GenresTitle>
           <SC.GenresList>
             {genres &&
               genres.map(({ name, image_background }) => (
                 <SC.GenresItem key={name}>
-                  <SC.GenresImage src={image_background} alt={name} width={36} />
+                  <SC.GenresImage
+                    src={image_background}
+                    alt={name}
+                    width={36}
+                  />
                   <h4>{name}</h4>
                 </SC.GenresItem>
               ))}

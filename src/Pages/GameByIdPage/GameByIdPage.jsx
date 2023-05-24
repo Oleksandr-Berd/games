@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { getGameById } from "../../utilities/helpers";
 import * as SC from "./Styles";
@@ -15,8 +15,10 @@ const GameByIdPage = () => {
     background_image_additional,
     genres,
     released,
-      website,
+    website,
     developers,
+      metacritic,
+    metacritic_url
   } = game;
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const GameByIdPage = () => {
       <SC.TitleContainer>
         <SC.LeftSideContainer>
           <SC.Title>{name}</SC.Title>
-          <p>Released: {released}</p>
+
           <SC.WebLink to={website}>Website: {website}</SC.WebLink>
           <SC.GenresTitle>Genres:</SC.GenresTitle>
           <SC.GenresList>
@@ -51,10 +53,31 @@ const GameByIdPage = () => {
                 </SC.GenresItem>
               ))}
           </SC.GenresList>
+          <SC.MetacriticCon>
+            <h3>Metacritic: </h3>
+            <p>{metacritic}</p>
+            <SC.MetacriticLink to={metacritic_url}>{metacritic_url}</SC.MetacriticLink>
+          </SC.MetacriticCon>
         </SC.LeftSideContainer>
         <SC.ImageAdd src={background_image_additional} alt={name} />
       </SC.TitleContainer>
       <SC.Description>{modifiedStr}</SC.Description>
+      <SC.DevelopersTitle>Developers</SC.DevelopersTitle>
+      <SC.Released>Released: {released}</SC.Released>
+      <SC.DevelopersList>
+        {developers &&
+          developers.map(({ name, image_background }) => (
+            <SC.DevelopersItem key={name}>
+              <SC.DevelopersImg
+                src={image_background}
+                alt={name}
+                width={56}
+                height={56}
+              />
+              <p>{name}</p>
+            </SC.DevelopersItem>
+          ))}
+      </SC.DevelopersList>
     </SC.Container>
   );
 };

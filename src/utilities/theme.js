@@ -22,6 +22,10 @@ const theme = {
     display: "inline-flex",
   },
 
+  inlineBlock: {
+    display: "inline-block",
+  },
+
   flex: {
     display: "flex",
     flexDirection: ["row", "column"],

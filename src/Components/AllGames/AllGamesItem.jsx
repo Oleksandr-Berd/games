@@ -7,6 +7,7 @@ import { AiOutlineApple } from "react-icons/ai";
 import { FcLinux } from "react-icons/fc";
 import { SiNintendo3Ds } from "react-icons/si";
 import { CgMathPlus } from "react-icons/cg";
+import { useLocation } from "react-router-dom";
 
 const AllGamesItem = ({
   image,
@@ -17,12 +18,17 @@ const AllGamesItem = ({
   parentPlatform,
   id,
 }) => {
+  const location = useLocation();
 
   const calculatedRating = Math.ceil((rating / ratingTop) * 100);
 
   return (
     <SC.AllGamesItem>
-      <SC.AllGamesLink to={`${id}`}>
+      <SC.AllGamesLink
+        to={`${id}`}
+        state={{ from: location }}
+        location={location}
+      >
         <SC.AllGameItemImage src={image} alt="" />
 
         <SC.AllGamesItemTopContainer>

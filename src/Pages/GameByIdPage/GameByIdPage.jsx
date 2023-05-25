@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 
 import { getGameById } from "../../utilities/helpers";
 import * as SC from "./Styles";
 
 const GameByIdPage = () => {
   const { id } = useParams();
-  const [game, setGame] = useState({});
+    const [game, setGame] = useState({});
+    const location = useLocation()
 
   const {
     background_image,
@@ -56,7 +57,9 @@ const GameByIdPage = () => {
           <SC.MetacriticCon>
             <h3>Metacritic: </h3>
             <p>{metacritic}</p>
-            <SC.MetacriticLink to={metacritic_url}>{metacritic_url}</SC.MetacriticLink>
+            <SC.MetacriticLink to={metacritic_url}>
+              {metacritic_url}
+            </SC.MetacriticLink>
           </SC.MetacriticCon>
         </SC.LeftSideContainer>
         <SC.ImageAdd src={background_image_additional} alt={name} />
@@ -78,6 +81,7 @@ const GameByIdPage = () => {
             </SC.DevelopersItem>
           ))}
       </SC.DevelopersList>
+      <SC.BackButton to="/all" state={{ from: location }}>Back</SC.BackButton>
     </SC.Container>
   );
 };

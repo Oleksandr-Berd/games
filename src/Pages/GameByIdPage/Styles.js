@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding-bottom: ${props => props.theme.spacing[4] + "px"};
+padding-bottom: ${props => props.theme.spacing[7] + "px"};
 
   text-align: ${(props) => props.theme.listText.textAlignCenter};
   background: ${(props) => props.theme.background.bloody};
@@ -148,3 +148,23 @@ margin-right: ${props => props.theme.spacing[5]+"px"};
 
 border-radius: ${props => props.theme.radius[5]+"%"}
 `
+
+export const BackButton = styled(NavLink)`
+  padding-right: ${(props) => props.theme.spacing[5] + "px"};
+  padding-left: ${(props) => props.theme.spacing[5] + "px"};
+
+  text-decoration: ${(props) => props.theme.listText.textDecor};
+  color: ${(props) => props.theme.color.text};
+  font-size: ${(props) => props.theme.listText.fontSizeM};
+  font-family: ${(props) => props.theme.listText.fontFamilyTitle};
+  font-style: ${(props) => props.theme.listText.fontStyleItalic};
+  font-weight: ${(props) => props.theme.listText.fontWeightBold};
+  background: ${(props) => props.theme.color.main};
+  transition: ${(props) => props.theme.transition.color};
+
+  &:hover,
+  &:focus {
+    color: ${(props) => props.theme.color.hover};
+    transition: ${(props) => props.theme.transition.color};
+  }
+`;

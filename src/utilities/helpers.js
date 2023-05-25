@@ -21,3 +21,14 @@ export const getGameById = async (id) => {
         return error
     }
 }
+
+export const test = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}games/${id}/screenshots?key=${API_KEY}`
+    );
+    console.log(response.data);
+  } catch (error) {
+    return error;
+  }
+};

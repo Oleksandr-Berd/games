@@ -139,8 +139,12 @@ export const DevelopersList = styled.ul`
 
 export const DevelopersItem = styled.li`
   display: ${(props) => props.theme.flex.display};
-  flex-direction: ${props => props.theme.flex.flexDirection[0]};
-  align-items: ${props => props.theme.flex.alignItems[2]};
+  flex-direction: ${(props) => props.theme.flex.flexDirection[0]};
+  align-items: ${(props) => props.theme.flex.alignItems[2]};
+
+  &:not(:last-child) {
+    margin-right: ${(props) => props.theme.spacing[5] + "px"};
+  }
 `;
 
 export const DevelopersImg = styled.img`

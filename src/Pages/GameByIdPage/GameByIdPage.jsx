@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
-import { getGameById } from "../../utilities/helpers";
+import { getGameById, test } from "../../utilities/helpers";
 import * as SC from "./Styles";
 
 const GameByIdPage = () => {
@@ -23,7 +23,8 @@ const GameByIdPage = () => {
   } = game;
 
   useEffect(() => {
-    getGameById(id).then(setGame);
+      getGameById(id).then(setGame);
+      test(id)
   }, [id]);
   const symbol = "<p>";
   const symbolToDelete = "</p>";

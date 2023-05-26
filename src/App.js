@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Components/StyledComponents";
 import Layout from "./Components/Layout/Layout";
 import SharedLayout from "./Components/SharedLayout/SharedLayout";
+import ScreenShots from "./Components/Screenshots/Screenshots";
 
 const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("./Pages/LoginPage/LoginPage"));
@@ -24,7 +25,9 @@ function App() {
             <Route path="login" element={<LoginPage />} />
             <Route path="signin" element={<SignInPage />} />
             <Route path="all" element={<AllGamesPage />} />
-            <Route path="/all/:id" element={<GameByIdPage />} />
+            <Route path="/all/:id" element={<GameByIdPage />}>
+              <Route path="screenshots" element={<ScreenShots />} />
+            </Route>
           </Route>
         </Routes>
       </Layout>

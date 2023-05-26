@@ -20,6 +20,12 @@
       { "destination": "popular", "name": "Popular in 2023", "icon": "#" },
       { "destination": "all250", "name": "All Time Top 250", "icon": "#" }
     ],
-    "browse": [{ "destination": "platform", "name": "Platform", "icon": "#" }]
+    "browse": [{ "destination": "platform", "name": "Platform", "icon": "#" }],
+    "gameAddInfo": [
+      { "destination": "screenshots", "name": "Screenshots", "icon": "#" },
+      { "destination": "developers", "name": "Developers", "icon": "#" },
+      { "destination": "dlc", "name": "DLC", "icon": "#" },
+      { "destination": "trailers", "name": "Trailers", "icon": "#" }
+    ]
   }
 }

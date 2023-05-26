@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 
-import { getGameById, test } from "../../utilities/helpers";
+import { getGameById, getScreenshots } from "../../utilities/helpers";
 import * as SC from "./Styles";
+// import ScreenShots from "../../Components/Screenshots/Screenshots";
+import GameNav from "../../Components/GameNav/GameNav";
 
 const GameByIdPage = () => {
   const { id } = useParams();
     const [game, setGame] = useState({});
+    const [error, setError] = useState(null);
+    // const [screenshots, setScreenshots] = useState({})
     const location = useLocation()
 
   const {
@@ -23,8 +27,8 @@ const GameByIdPage = () => {
   } = game;
 
   useEffect(() => {
-      getGameById(id).then(setGame);
-      test(id)
+      getGameById(id).then(setGame).catch(error => setError(error));
+    //   getScreenshots(id).then(setScreenshots).catch(error => setError(error));
   }, [id]);
   const symbol = "<p>";
   const symbolToDelete = "</p>";
@@ -34,7 +38,8 @@ const GameByIdPage = () => {
     .replace(new RegExp(symbolToDelete, "g"), "");
 
   return (
-    <SC.Container>
+      <SC.Container>
+          {error && <h1>{error.message}</h1>}
       <SC.Image src={background_image} alt={name} />
       <SC.TitleContainer>
         <SC.LeftSideContainer>
@@ -56,7 +61,7 @@ const GameByIdPage = () => {
               ))}
           </SC.GenresList>
           <SC.MetacriticCon>
-            <h3>Metacritic: </h3>
+            <SC.MetacriticTitle>Metacritic: </SC.MetacriticTitle>
             <p>{metacritic}</p>
             <SC.MetacriticLink to={metacritic_url}>
               {metacritic_url}
@@ -65,7 +70,8 @@ const GameByIdPage = () => {
         </SC.LeftSideContainer>
         <SC.ImageAdd src={background_image_additional} alt={name} />
       </SC.TitleContainer>
-      <SC.Description>{modifiedStr}</SC.Description>
+          <SC.Description>{modifiedStr}</SC.Description>
+          <GameNav/>
       <SC.DevelopersTitle>Developers</SC.DevelopersTitle>
       <SC.Released>Released: {released}</SC.Released>
       <SC.DevelopersList>
@@ -81,7 +87,8 @@ const GameByIdPage = () => {
               <p>{name}</p>
             </SC.DevelopersItem>
           ))}
-      </SC.DevelopersList>
+          </SC.DevelopersList>
+         <Outlet/>
       <SC.BackButton to="/all" state={{ from: location }}>Back</SC.BackButton>
     </SC.Container>
   );

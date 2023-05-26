@@ -121,18 +121,24 @@ export const Description = styled.article`
   line-height: ${(props) => props.theme.listText.lineHeightM};
 `;
 
+export const DevelopersCon = styled.div`
+display: ${props => props.theme.flex.display};
+align-items: center;
+
+& > *{
+  margin-right: ${props => props.theme.spacing[5]+"px"};
+}
+`
+
 export const DevelopersTitle = styled.h3`
-  margin-bottom: ${(props) => props.theme.spacing[4] + "px"};
+  margin-bottom: ${(props) => props.theme.spacing[3] + "px"};
 
   color: ${(props) => props.theme.color.text};
-  font-family: ${(props) => props.theme.listText.fontFamilyTitle};
-  font-weight: ${(props) => props.theme.listText.fontWeightBold};
-  font-size: ${(props) => props.theme.listText.fontSizeM};
-  font-style: ${(props) => props.theme.listText.fontStyleItalic};
+  font-size: ${(props) => props.theme.listText.fontSizeXS};
 `;
 
 export const Released = styled.p`
-margin-bottom: ${props => props.theme.spacing[5]+ "px"};
+margin-bottom:${props => props.theme.spacing[3]+"px"};
 
   color: ${(props) => props.theme.color.text};
   font-family: ${(props) => props.theme.listText.fontFamilyText};
@@ -141,7 +147,6 @@ margin-bottom: ${props => props.theme.spacing[5]+ "px"};
 export const DevelopersList = styled.ul`
   display: ${(props) => props.theme.flex.display};
   justify-content: ${(props) => props.theme.flex.justifyContent[0]};
-  margin-bottom: ${props => props.theme.spacing[5]+"px"};
 
   color: ${(props) => props.theme.color.text};
   font-family: ${(props) => props.theme.listText.fontFamilyText};

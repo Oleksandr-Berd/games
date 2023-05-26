@@ -4,6 +4,7 @@ import { Outlet, useLocation, useParams } from "react-router-dom";
 import { getGameById } from "../../utilities/helpers";
 import * as SC from "./Styles";
 import GameNav from "../../Components/GameNav/GameNav";
+import Description from "../../Components/Description/Description";
 
 const GameByIdPage = () => {
   const { id } = useParams();
@@ -29,10 +30,14 @@ const GameByIdPage = () => {
   }, [id]);
   const symbol = "<p>";
   const symbolToDelete = "</p>";
+  const symbolToRemove = "br />";
+  const symbolRemove = "<"
 
   let modifiedStr = description
     ?.replace(new RegExp(symbol, "g"), "")
-    .replace(new RegExp(symbolToDelete, "g"), "");
+    ?.replace(new RegExp(symbolToDelete, "g"), "")
+    ?.replace(new RegExp(symbolToRemove, "g"), "")
+    ?.replace(new RegExp(symbolRemove, "g"), "");
 
   return (
     <SC.Container>
@@ -64,27 +69,28 @@ const GameByIdPage = () => {
               {metacritic_url}
             </SC.MetacriticLink>
           </SC.MetacriticCon>
+          <SC.DevelopersCon>
+            <SC.DevelopersTitle>Developers: </SC.DevelopersTitle>
+            <SC.Released>Released: {released}</SC.Released>
+            <SC.DevelopersList>
+              {developers &&
+                developers.map(({ name, image_background }) => (
+                  <SC.DevelopersItem key={name}>
+                    <SC.DevelopersImg
+                      src={image_background}
+                      alt={name}
+                      width={36}
+                      height={36}
+                    />
+                    <p>{name}</p>
+                  </SC.DevelopersItem>
+                ))}
+            </SC.DevelopersList>
+          </SC.DevelopersCon>
         </SC.LeftSideContainer>
         <SC.ImageAdd src={background_image_additional} alt={name} />
       </SC.TitleContainer>
-      <SC.Description>{modifiedStr}</SC.Description>
-
-      <SC.DevelopersTitle>Developers</SC.DevelopersTitle>
-      <SC.Released>Released: {released}</SC.Released>
-      <SC.DevelopersList>
-        {developers &&
-          developers.map(({ name, image_background }) => (
-            <SC.DevelopersItem key={name}>
-              <SC.DevelopersImg
-                src={image_background}
-                alt={name}
-                width={56}
-                height={56}
-              />
-              <p>{name}</p>
-            </SC.DevelopersItem>
-          ))}
-      </SC.DevelopersList>
+      <Description description={modifiedStr} />
       <GameNav />
       <Outlet released={released} developers={developers} />
       <SC.BackButton to="/all" state={{ from: location }}>

@@ -24,7 +24,7 @@ function ScreenShots() {
       <SC.CustomCarousel fade>
         {screenshots.length &&
           screenshots.map(({ image }, idx) => (
-            <Carousel.Item>
+            <Carousel.Item key={idx}>
               <img className="d-block w-100" src={image} alt={idx} />
               <Carousel.Caption>
                 <h3>{idx + 1}</h3>

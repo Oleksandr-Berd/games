@@ -156,7 +156,7 @@ export const SearchIcon = styled(IoIosSearch)`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateY(30%) translateX(25%);
+  transform: translateY(50%) translateX(25%);
 `;
 
 export const SearchInput = styled(Field)`

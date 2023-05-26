@@ -200,3 +200,5 @@ export const CustomCarousel = styled(Carousel)`
   margin-left: auto;
 
 `;
+
+

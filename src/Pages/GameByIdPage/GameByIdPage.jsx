@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 
-import { getGameById, getScreenshots } from "../../utilities/helpers";
+import { getGameById } from "../../utilities/helpers";
 import * as SC from "./Styles";
-// import ScreenShots from "../../Components/Screenshots/Screenshots";
 import GameNav from "../../Components/GameNav/GameNav";
 
 const GameByIdPage = () => {
   const { id } = useParams();
     const [game, setGame] = useState({});
     const [error, setError] = useState(null);
-    // const [screenshots, setScreenshots] = useState({})
     const location = useLocation()
 
   const {
@@ -28,7 +26,6 @@ const GameByIdPage = () => {
 
   useEffect(() => {
       getGameById(id).then(setGame).catch(error => setError(error));
-    //   getScreenshots(id).then(setScreenshots).catch(error => setError(error));
   }, [id]);
   const symbol = "<p>";
   const symbolToDelete = "</p>";
@@ -38,8 +35,8 @@ const GameByIdPage = () => {
     .replace(new RegExp(symbolToDelete, "g"), "");
 
   return (
-      <SC.Container>
-          {error && <h1>{error.message}</h1>}
+    <SC.Container>
+      {error && <h1>{error.message}</h1>}
       <SC.Image src={background_image} alt={name} />
       <SC.TitleContainer>
         <SC.LeftSideContainer>
@@ -70,8 +67,8 @@ const GameByIdPage = () => {
         </SC.LeftSideContainer>
         <SC.ImageAdd src={background_image_additional} alt={name} />
       </SC.TitleContainer>
-          <SC.Description>{modifiedStr}</SC.Description>
-          <GameNav/>
+      <SC.Description>{modifiedStr}</SC.Description>
+
       <SC.DevelopersTitle>Developers</SC.DevelopersTitle>
       <SC.Released>Released: {released}</SC.Released>
       <SC.DevelopersList>
@@ -87,9 +84,12 @@ const GameByIdPage = () => {
               <p>{name}</p>
             </SC.DevelopersItem>
           ))}
-          </SC.DevelopersList>
-         <Outlet/>
-      <SC.BackButton to="/all" state={{ from: location }}>Back</SC.BackButton>
+      </SC.DevelopersList>
+      <GameNav />
+      <Outlet released={released} developers={developers} />
+      <SC.BackButton to="/all" state={{ from: location }}>
+        Back
+      </SC.BackButton>
     </SC.Container>
   );
 };

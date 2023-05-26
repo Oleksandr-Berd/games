@@ -32,3 +32,14 @@ export const getScreenshots = async (id) => {
     return error;
   }
 };
+
+export const getTeam = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}games/${id}/development-team?key=${API_KEY}`
+    );
+    return response.data.results;
+  } catch (error) {
+    return error;
+  }
+};

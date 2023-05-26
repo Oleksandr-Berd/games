@@ -8,19 +8,18 @@ import { getScreenshots } from "../../utilities/helpers";
 function ScreenShots() {
   const { id } = useParams();
 
- const [error, setError] = useState(null);
- const [screenshots, setScreenshots] = useState({});
-console.log(id);
+  const [error, setError] = useState(null);
+  const [screenshots, setScreenshots] = useState({});
+  
   useEffect(() => {
     getScreenshots(id)
       .then(setScreenshots)
       .catch((error) => setError(error));
-  },[id])
-  
-  
+  }, [id]);
+
   return (
     <div>
-      {error && <h3>{error.message }</h3>}
+      {error && <h3>{error.message}</h3>}
       <SC.ScreenShotsTitle>Screenshots</SC.ScreenShotsTitle>
       <SC.CustomCarousel fade>
         {screenshots.length &&

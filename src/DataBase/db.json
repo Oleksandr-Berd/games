@@ -23,7 +23,7 @@
     "browse": [{ "destination": "platform", "name": "Platform", "icon": "#" }],
     "gameAddInfo": [
       { "destination": "screenshots", "name": "Screenshots", "icon": "#" },
-      { "destination": "developers", "name": "Developers", "icon": "#" },
+      { "destination": "developers", "name": "Developers Team", "icon": "#" },
       { "destination": "dlc", "name": "DLC", "icon": "#" },
       { "destination": "trailers", "name": "Trailers", "icon": "#" }
     ]

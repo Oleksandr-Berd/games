@@ -5,6 +5,7 @@ import { GlobalStyle } from "./Components/StyledComponents";
 import Layout from "./Components/Layout/Layout";
 import SharedLayout from "./Components/SharedLayout/SharedLayout";
 import ScreenShots from "./Components/Screenshots/Screenshots";
+import Developers from "./Components/Developers/Developers";
 
 const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("./Pages/LoginPage/LoginPage"));
@@ -27,6 +28,7 @@ function App() {
             <Route path="all" element={<AllGamesPage />} />
             <Route path="/all/:id" element={<GameByIdPage />}>
               <Route path="screenshots" element={<ScreenShots />} />
+              <Route path="developers" element={<Developers />} />
             </Route>
           </Route>
         </Routes>

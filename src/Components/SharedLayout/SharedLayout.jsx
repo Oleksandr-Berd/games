@@ -8,6 +8,7 @@ import SideBar from "../SideBar/SideBar";
 
 
 const SharedLayout = () => {
+ 
   return (
     <>
       <Header />

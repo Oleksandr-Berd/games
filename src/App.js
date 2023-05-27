@@ -14,6 +14,7 @@ const AllGamesPage = lazy(() => import("./Pages/AllGamesPage/AllGamesPage"))
 const GameByIdPage = lazy(()=> import("./Pages/GameByIdPage/GameByIdPage.jsx"))
 
 function App() {
+
   
   return (
     <>

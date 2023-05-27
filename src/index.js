@@ -9,8 +9,9 @@ import reportWebVitals from './reportWebVitals';
 // import { Provider } from "react-redux";
 // import { store, persistor } from "./Redux/store";
 import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from "styled-components";
 
+import { ThemeProvider } from "styled-components";
+import QueryProvider from './context/queryProvider';
 import theme from './utilities/theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,11 +20,13 @@ root.render(
     {/* <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}> */}
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-      </BrowserRouter>
-      {/* </PersistGate>
+      <QueryProvider>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </QueryProvider>
+    </BrowserRouter>
+    {/* </PersistGate>
     </Provider> */}
   </React.StrictMode>
 );

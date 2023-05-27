@@ -24,13 +24,26 @@ export const AllGamesItem = styled.li`
   background-color: ${(props) => props.theme.color.item};
   border-radius: ${(props) => props.theme.radius[1] + "px"};
   box-shadow: 0 2px 6px rgba(255, 0, 0, 0.8);
+
 `;
 
 export const AllGamesLink = styled(NavLink)`
+display: ${props => props.theme.inlineBlock.display};
+margin-top: ${props => props.theme.spacing[3] + "px"};
+
   text-decoration: ${(props) => props.theme.listText.textDecor};
 
   color: ${(props) => props.theme.color.text};
   background-color: ${(props) => props.theme.color.item};
+
+  transition: ${(props) => props.theme.transition.color};
+
+  &:hover,
+  &:focus {
+    color: ${(props) =>
+      props.disabled ? props.theme.color.item : props.theme.color.hover};
+    transition: ${(props) => props.theme.transition.color};
+  }
 `;
 
 export const AllGameItemImage = styled.img`
@@ -98,7 +111,6 @@ export const AllGamesItemTopContainer = styled.div`
 `;
 
 export const AllGameItemTitle = styled.h4`
-  margin-left: ${(props) => props.theme.spacing[4] + "px"};
   margin-bottom: ${(props) => props.theme.spacing[4] + "px"};
 
   font-weight: ${(props) => props.theme.listText.fontWeightBold};

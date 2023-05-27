@@ -178,7 +178,7 @@ export const BackButton = styled(NavLink)`
   font-family: ${(props) => props.theme.listText.fontFamilyTitle};
   font-style: ${(props) => props.theme.listText.fontStyleItalic};
   font-weight: ${(props) => props.theme.listText.fontWeightBold};
-  background: ${(props) => props.theme.color.main};
+  background: ${(props) => props.theme.color.transparent};
   transition: ${(props) => props.theme.transition.color};
 
   &:hover,

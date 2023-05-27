@@ -1,15 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FidgetSpinner } from "react-loader-spinner";
 
 import * as SC from "./Styles"
 import AllGamesList from "../../Components/AllGames/AllGamesList";
 import { getAllGames } from "../../utilities/helpers";
+import queryContext from "../../context/queryContext";
 
 const AllGamesPage = () => {
   const [games, setGames] = useState([]);
   const [page, setPage] = useState(1);
+  const [limit] = useState(6)
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  
+  const {query} = useContext(queryContext)
+  
 
   const handlePage = (evt) => {
     switch (evt.target.id) {
@@ -29,7 +34,8 @@ const AllGamesPage = () => {
     setIsLoading(true);
 
     const fetchGames = () => {
-      getAllGames(page)
+  
+      getAllGames(page, limit, query)
         .then((response) => {
           setGames(response);
         })
@@ -38,7 +44,7 @@ const AllGamesPage = () => {
     };
 
     fetchGames();
-  }, [page]);
+  }, [limit, page, query]);
 
   return (
     <SC.AllGameContainer>

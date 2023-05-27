@@ -18,6 +18,9 @@ export const AllGamesList = styled.ul`
 `;
 
 export const AllGamesItem = styled.li`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
   padding-bottom: ${(props) => props.theme.spacing[5] + "px"};
 
   color: ${(props) => props.theme.color.text};
@@ -26,6 +29,8 @@ export const AllGamesItem = styled.li`
   box-shadow: 0 2px 6px rgba(255, 0, 0, 0.8);
 
 `;
+
+
 
 export const AllGamesLink = styled(NavLink)`
 display: ${props => props.theme.inlineBlock.display};
@@ -81,17 +86,21 @@ export const Rating = styled.p`
   color: ${(props) =>
     props.calculatedRating > 80
       ? props.theme.color.high
-      : props.calculatedRating < 60
+      : props.calculatedRating < 60 && props.calculatedRating > 1
       ? props.theme.color.poor
-      : props.theme.color.average};
+      : props.calculatedRating > 1
+      ? props.theme.color.average
+      : props.theme.color.rate};
 
   border: 1px solid
     ${(props) =>
       props.calculatedRating > 80
         ? props.theme.color.high
-        : props.calculatedRating < 60
+        : props.calculatedRating < 60 && props.calculatedRating > 1
         ? props.theme.color.poor
-        : props.theme.color.average};
+        : props.calculatedRating > 1
+        ? props.theme.color.average
+        : props.theme.color.rate};
 
   font-weight: ${(props) => props.theme.listText.fontWeightBold};
   font-size: ${(props) => props.theme.listText.fontSizeXS};
@@ -123,6 +132,7 @@ export const AllGamesItemRateCon = styled.div`
   display: ${(props) => props.theme.inlineFlex.display};
   justify-content: ${(props) => props.theme.flex.justifyContent[0]};
   align-items: ${(props) => props.theme.flex.alignItems[2]};
+  align-self: flex-start;
   padding-left: ${(props) => props.theme.spacing[3] + "px"};
   padding-right: ${(props) => props.theme.spacing[5] + "px"};
   padding-top: ${(props) => props.theme.spacing[1] + "px"};

@@ -20,7 +20,7 @@ const AllGamesItem = ({
 }) => {
   const location = useLocation();
 
-  const calculatedRating = Math.ceil((rating / ratingTop) * 100);
+  const calculatedRating = Math.ceil((rating / ratingTop) * 100) || 0;
 
   return (
     <SC.AllGamesItem>

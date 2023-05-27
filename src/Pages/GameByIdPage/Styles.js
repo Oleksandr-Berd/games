@@ -50,6 +50,7 @@ export const ImageAdd = styled.img`
 `;
 
 export const Title = styled.h2`
+max-width: ${props => props.theme.percentage[6]};
   color: ${(props) => props.theme.color.text};
   font-family: ${(props) => props.theme.listText.fontFamilyTitle};
   font-size: ${(props) => props.theme.listText.fontSizeXM};

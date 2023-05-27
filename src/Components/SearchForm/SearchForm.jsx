@@ -16,14 +16,13 @@ const SearchForm = () => {
       timer = setTimeout(() => {
         search(inputValue);
         navigate("all");
+        setInputValue("");
       }, 1000);
     }
-
     return () => {
       clearTimeout(timer);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inputValue, search]);
+  }, [inputValue, navigate, search]);
 
   const handleChange = (evt) => {
     setInputValue(evt.currentTarget.value);
@@ -37,6 +36,7 @@ const SearchForm = () => {
           type="text"
           placeholder="search games"
           onChange={handleChange}
+          value={inputValue}
         />
       </SC.FormSearch>
     </Formik>

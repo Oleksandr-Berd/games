@@ -1,6 +1,5 @@
 import * as SC from "../../Components/StyledComponents";
-// import { bloodBornHomePage } from "../../assets/images";
-// import homePageImg from "../../assets/images/bloodbornelogopng896712.png"
+
 import { homePage, homePagePic, homeBottomImg } from "../../assets/images/images";
 
 const HomePage = () => {

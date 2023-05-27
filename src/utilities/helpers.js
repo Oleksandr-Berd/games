@@ -53,3 +53,14 @@ export const getTeam = async (id) => {
     return error;
   }
 };
+
+export const getDLC = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}games/${id}/additions?key=${API_KEY}`
+    );
+    return response.data.results;
+  } catch (error) {
+    return error;
+  }
+};

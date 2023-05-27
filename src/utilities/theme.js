@@ -44,8 +44,8 @@ const theme = {
     bloodyText: "linear-gradient(to right, #f00, #800)",
   },
 
-    color: {
-      transparent:"transparent",
+  color: {
+    transparent: "transparent",
     main: "#0F0F0F",
     text: "#E4E4D4",
     logo: "#d92229",

@@ -39,7 +39,7 @@ const DLC = () => {
       ) : (
         <>
           <SC.DLCTitle>DLC:</SC.DLCTitle>
-          <ul>
+          <SC.DLCList>
             {dlc.length &&
               dlc.map(
                 ({ name, background_image, released, rating, rating_top }) => (
@@ -53,7 +53,7 @@ const DLC = () => {
                   />
                 )
               )}
-          </ul>
+          </SC.DLCList>
         </>
       )}
     </>

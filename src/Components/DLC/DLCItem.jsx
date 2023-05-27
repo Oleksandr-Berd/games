@@ -3,11 +3,18 @@ import * as SC from "./Style";
 import defaultImage from "../../assets/images/default.jpg";
 
 const DLCItem = ({ image, name, rating, released, ratingTop }) => {
+
+const calculatedRating = Math.ceil((rating / ratingTop) * 100) || 0;
+
   return (
-    <li backgroundUrl={image}>
-      <img src={image || defaultImage} alt="name" width={160} />
-      <h3>{name}</h3>
-    </li>
+    <SC.DLCItem>
+      <img src={image || defaultImage} alt="name" width={320} height={220} />
+      <SC.DLCItemName>{name}</SC.DLCItemName>
+      <SC.DLCRealized>Released: {released}</SC.DLCRealized>
+      <SC.DLCRating calculatedRating={calculatedRating}>
+        {calculatedRating}
+      </SC.DLCRating>
+    </SC.DLCItem>
   );
 };
 

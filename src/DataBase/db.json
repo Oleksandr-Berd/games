@@ -25,7 +25,8 @@
       { "destination": "screenshots", "name": "Screenshots", "icon": "#" },
       { "destination": "developers", "name": "Developers Team", "icon": "#" },
       { "destination": "dlc", "name": "DLC", "icon": "#" },
-      { "destination": "trailers", "name": "Trailers", "icon": "#" }
+      { "destination": "trailers", "name": "Trailers", "icon": "#" },
+       { "destination": "achievements", "name": "Achievements", "icon": "#" }
     ]
   }
 }

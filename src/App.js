@@ -7,6 +7,7 @@ import SharedLayout from "./Components/SharedLayout/SharedLayout";
 import ScreenShots from "./Components/Screenshots/Screenshots";
 import Developers from "./Components/Developers/Developers";
 import DLC from "./Components/DLC/DLC";
+import Trailers from "./Components/Trailers/Trailers";
 
 const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("./Pages/LoginPage/LoginPage"));
@@ -33,6 +34,7 @@ function App() {
               <Route path="developers" element={<Developers />} />
               <Route path="dlc" element={<DLC />} />
             </Route>
+            <Route path="/all/:id/trailers" element={<Trailers />} />
           </Route>
         </Routes>
       </Layout>

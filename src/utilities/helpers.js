@@ -64,3 +64,14 @@ export const getDLC = async (id) => {
     return error;
   }
 };
+
+export const getTrailers = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}games/${id}/movies?key=${API_KEY}`
+    );
+    return response.data.results;
+  } catch (error) {
+    return error;
+  }
+};

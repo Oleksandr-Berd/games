@@ -75,3 +75,17 @@ export const getTrailers = async (id) => {
     return error;
   }
 };
+
+export const getAchieves = async (id) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}games/${id}/achievements?key=${API_KEY}`
+    );
+
+return response.data.results;
+   
+  } catch (error) {
+    return error;
+  }
+};
+

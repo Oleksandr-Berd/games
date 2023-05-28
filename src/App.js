@@ -8,6 +8,7 @@ import ScreenShots from "./Components/Screenshots/Screenshots";
 import Developers from "./Components/Developers/Developers";
 import DLC from "./Components/DLC/DLC";
 import Trailers from "./Components/Trailers/Trailers";
+import Achieves from "./Components/Achieves/Achieves";
 
 const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("./Pages/LoginPage/LoginPage"));
@@ -33,6 +34,7 @@ function App() {
               <Route path="screenshots" element={<ScreenShots />} />
               <Route path="developers" element={<Developers />} />
               <Route path="dlc" element={<DLC />} />
+              <Route path="achievements" element={<Achieves />} />
             </Route>
             <Route path="/all/:id/trailers" element={<Trailers />} />
           </Route>

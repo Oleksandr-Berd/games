@@ -40,7 +40,7 @@ const DLC = () => {
         <>
           <SC.DLCTitle>DLC:</SC.DLCTitle>
           <SC.DLCList>
-            {dlc.length &&
+            {dlc && dlc.length ? (
               dlc.map(
                 ({ name, background_image, released, rating, rating_top }) => (
                   <DLCItem
@@ -52,7 +52,10 @@ const DLC = () => {
                     key={name}
                   />
                 )
-              )}
+              )
+            ) : (
+              <h1>Sorry, There is no any data about DLC</h1>
+            )}
           </SC.DLCList>
         </>
       )}

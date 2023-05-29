@@ -91,31 +91,30 @@ console.log(trailers);
                   console.log("Slide changed");
                 }}
               >
-                {
-                  trailers.map(({ name, preview, data }, idx) => (
-                    <SwiperSlide key={name}>
-                      <SC.Slide>
-                        <SC.SlideContainer className="card">
-                          <SC.ButtonContainer>
-                            <SC.Button onClick={handleSlidePrev}>
-                              Slide to the prev slide
-                            </SC.Button>
-                            <SC.Button onClick={handleSlideNext}>
-                              Slide to the next slide
-                            </SC.Button>
-                          </SC.ButtonContainer>
+                {trailers.map(({ name, preview, data }, idx) => (
+                  <SwiperSlide key={name}>
+                    <SC.Slide>
+                      <SC.SlideContainer className="card">
+                        <SC.ButtonContainer>
+                          <SC.Button onClick={handleSlidePrev}>
+                            Slide to the prev movie
+                          </SC.Button>
+                          <SC.Button onClick={handleSlideNext}>
+                            Slide to the next movie
+                          </SC.Button>
+                        </SC.ButtonContainer>
 
-                          <SC.Title>{name}</SC.Title>
-                          <SC.Image src={preview} alt={name} />
-                          <div className="video-container">
-                            <SC.Video controls>
-                              <source src={data.max} type="video/mp4" />
-                            </SC.Video>
-                          </div>
-                        </SC.SlideContainer>
-                      </SC.Slide>
-                    </SwiperSlide>
-                  ))}
+                        <SC.Title>{name}</SC.Title>
+                        <SC.Image src={preview} alt={name} />
+                        <div className="video-container">
+                          <SC.Video controls>
+                            <source src={data.max} type="video/mp4" />
+                          </SC.Video>
+                        </div>
+                      </SC.SlideContainer>
+                    </SC.Slide>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </>
           ) : (

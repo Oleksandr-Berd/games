@@ -4,17 +4,17 @@ import { Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./Components/StyledComponents";
 import Layout from "./Components/Layout/Layout";
 import SharedLayout from "./Components/SharedLayout/SharedLayout";
-import ScreenShots from "./Components/Screenshots/Screenshots";
-import Developers from "./Components/Developers/Developers";
-import DLC from "./Components/DLC/DLC";
-import Trailers from "./Components/Trailers/Trailers";
-import Achieves from "./Components/Achieves/Achieves";
 
 const HomePage = lazy(() => import("./Pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("./Pages/LoginPage/LoginPage"));
 const SignInPage = lazy(() => import("./Pages/SingInPage/SignInPage"));
 const AllGamesPage = lazy(() => import("./Pages/AllGamesPage/AllGamesPage"))
-const GameByIdPage = lazy(()=> import("./Pages/GameByIdPage/GameByIdPage.jsx"))
+const GameByIdPage = lazy(() => import("./Pages/GameByIdPage/GameByIdPage.jsx"))
+const DLC = lazy(() => import("./Components/DLC/DLC"));
+const Trailers = lazy(() => import("./Components/Trailers/Trailers"));
+const Achieves = lazy(() => import("./Components/Achieves/Achieves"));
+const Developers = lazy(() => import("./Components/Developers/Developers"));
+const ScreenShots = lazy(() => import("./Components/Screenshots/Screenshots"));
 
 function App() {
 

@@ -1,6 +1,6 @@
 import SideBarList from "./SideBarList";
 
-import * as SC from "./Styles"
+import * as SC from "./SideBarStyles"
 
 const SideBar = () => {
   return <SC.SideBar><SideBarList/></SC.SideBar>;

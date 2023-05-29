@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 
-import * as SC from "../../Pages/GameByIdPage/Styles";
+import * as SC from "../../Pages/GameByIdPage/gameByIdPageStyles";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getScreenshots } from "../../utilities/helpers";

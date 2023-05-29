@@ -2,7 +2,7 @@ import { useContext } from "react";
 import sideBar from "../../DataBase/db.json";
 import queryContext from "../../context/queryContext";
 
-import * as SC from "./Styles";
+import * as SC from "./SideBarStyles";
 
 const SideBarItem = ({ destination, name }) => {
 const {search} = useContext(queryContext)

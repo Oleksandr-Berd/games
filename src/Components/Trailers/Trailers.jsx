@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocation, useParams } from "react-router-dom";
 import { getTrailers } from "../../utilities/helpers";
 import { FidgetSpinner } from "react-loader-spinner";
-import * as SC from "./Style";
+import * as SC from "./TrailersStyle";
 
 const Trailers = () => {
     const { id } = useParams();

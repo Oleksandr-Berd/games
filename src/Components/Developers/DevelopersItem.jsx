@@ -1,4 +1,4 @@
-import * as SC from "./Style";
+import * as SC from "./DevelopersStyle";
 
 import defaultImage from "../../assets/images/default.jpg"
 

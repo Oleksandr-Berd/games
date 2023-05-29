@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { FidgetSpinner } from "react-loader-spinner";
 
-import * as SC from "./Styles"
+import * as SC from "./AllGamesPageStyles"
 import AllGamesList from "../../Components/AllGames/AllGamesList";
 import { getAllGames } from "../../utilities/helpers";
 import queryContext from "../../context/queryContext";

@@ -1,4 +1,4 @@
-import * as SC from "../../Pages/AllGamesPage/Styles"
+import * as SC from "../../Pages/AllGamesPage/AllGamesPageStyles"
 
 import AllGamesItem from "./AllGamesItem";
 

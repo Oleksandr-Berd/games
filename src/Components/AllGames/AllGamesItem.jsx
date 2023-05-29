@@ -1,4 +1,4 @@
-import * as SC from "../../Pages/AllGamesPage/Styles";
+import * as SC from "../../Pages/AllGamesPage/AllGamesPageStyles";
 
 import { TfiMicrosoft } from "react-icons/tfi";
 import { BsPlaystation } from "react-icons/bs";

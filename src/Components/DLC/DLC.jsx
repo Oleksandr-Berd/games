@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import * as SC from "./Style";
+import * as SC from "./DLCStyle";
 import { useEffect, useState } from "react";
 import { getDLC } from "../../utilities/helpers";
 import { FidgetSpinner } from "react-loader-spinner";

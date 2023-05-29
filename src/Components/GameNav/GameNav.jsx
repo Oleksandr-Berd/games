@@ -1,4 +1,4 @@
-import * as SC from "./Styles"
+import * as SC from "./GameNavStyles"
 import gameData from "../../DataBase/db.json"
 import GameNavItem from "./GameNavItem";
 

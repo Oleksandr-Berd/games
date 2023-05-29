@@ -30,6 +30,8 @@ export const SideBarTitleLink = styled(NavLink)`
 
     transition: ${(props) => props.theme.transition.color};
   }
+
+ 
 `;
 
 export const SubListSideBar = styled.ul`

@@ -1,5 +1,5 @@
 
-import * as SC from "./Styles"
+import * as SC from "./GameNavStyles"
 
 const GameNavItem = ({ destination, name }) => {
   return (

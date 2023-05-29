@@ -1,6 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
 
-import * as SC from "./Styles"
+import * as SC from "./DescriptionStyles"
 
 function Description({ description }) {
   return (

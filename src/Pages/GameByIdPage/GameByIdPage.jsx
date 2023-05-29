@@ -3,7 +3,7 @@ import { Outlet, useLocation, useParams } from "react-router-dom";
 import { FidgetSpinner } from "react-loader-spinner";
 
 import { getGameById } from "../../utilities/helpers";
-import * as SC from "./Styles";
+import * as SC from "./gameByIdPageStyles";
 import GameNav from "../../Components/GameNav/GameNav";
 import Description from "../../Components/Description/Description";
 

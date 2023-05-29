@@ -1,5 +1,5 @@
 
-import * as SC from "../StyledComponents";
+import * as SC from "../Header/HeaderStyled";
 
 const AuthNav = () => {
   return (

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { FidgetSpinner } from "react-loader-spinner";
 
-import * as SC from "../StyledComponents"
+import * as SC from "../Layout/LayoutStyled"
 import Header from "../Header/Header";
 import SideBar from "../SideBar/SideBar";
 

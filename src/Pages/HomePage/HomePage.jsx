@@ -1,4 +1,4 @@
-import * as SC from "../../Components/StyledComponents";
+import * as SC from "./HomePageStyled";
 
 import { homePage, homePagePic, homeBottomImg } from "../../assets/images/images";
 

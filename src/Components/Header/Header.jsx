@@ -1,4 +1,4 @@
-import * as SC from "../StyledComponents"
+import * as SC from "./HeaderStyled"
 
 import AuthNav from "../AuthNav/AuthNav";
 import Logo from "../Logo/Logo";

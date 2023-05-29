@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 
-import * as SC from "../StyledComponents";
+import * as SC from "./SearchFormStyled";
 import { useContext, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import queryContext from "../../context/queryContext";

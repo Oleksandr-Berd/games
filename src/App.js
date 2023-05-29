@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { GlobalStyle } from "./Components/StyledComponents";
+import { GlobalStyle } from "./Components/GlobalStyled";
 import Layout from "./Components/Layout/Layout";
 import SharedLayout from "./Components/SharedLayout/SharedLayout";
 

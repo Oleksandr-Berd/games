@@ -208,3 +208,7 @@ export const CustomCarousel = styled(Carousel)`
 `;
 
 
+export const CustomCarouselItem = styled(Carousel.Item)`::after
+cursor: pointer;
+`
+

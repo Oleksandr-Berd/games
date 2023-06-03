@@ -8,8 +8,12 @@ import { FcLinux } from "react-icons/fc";
 import { SiNintendo3Ds } from "react-icons/si";
 import { CgMathPlus } from "react-icons/cg";
 import { useLocation } from "react-router-dom";
+import Favorites from "../Favorites/Favorites";
 
 const AllGamesItem = ({
+  favorites,
+  addLiked,
+  removeLiked,
   image,
   name,
   ratingsCount,
@@ -18,6 +22,8 @@ const AllGamesItem = ({
   parentPlatform,
   id,
 }) => {
+  const isLiked = favorites.includes(id);
+
   const location = useLocation();
 
   const calculatedRating = Math.ceil((rating / ratingTop) * 100) || 0;
@@ -91,11 +97,18 @@ const AllGamesItem = ({
           <SC.AllGameItemTitle>{name}</SC.AllGameItemTitle>
         </SC.AllGamesLink>
       </SC.AllGamesItemTopContainer>
-
-      <SC.AllGamesItemRateCon>
-        <CgMathPlus />
-        <p>{ratingsCount}</p>
-      </SC.AllGamesItemRateCon>
+      <SC.FavoriteContainer>
+        <SC.AllGamesItemRateCon>
+          <CgMathPlus />
+          <p>{ratingsCount}</p>
+        </SC.AllGamesItemRateCon>
+        <Favorites
+          addLiked={addLiked}
+          removeLiked={removeLiked}
+          id={id}
+          isLiked={isLiked}
+        />
+      </SC.FavoriteContainer>
     </SC.AllGamesItem>
   );
 };

@@ -57,6 +57,11 @@ const theme = {
     text: "Montserrat",
   },
 
+  weight: {
+    bold: "800",
+    normal: "500",
+  },
+
   spacing: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 64, 128, 256, 312, 512],
 
   transition: {

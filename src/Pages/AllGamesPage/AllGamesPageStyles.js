@@ -178,3 +178,10 @@ export const Button = styled.button`
     transition: ${(props) => props.theme.transition.color};
   }
 `;
+
+
+export const FavoriteContainer = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+`

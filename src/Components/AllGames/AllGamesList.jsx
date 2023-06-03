@@ -1,11 +1,27 @@
+import { useEffect, useState } from "react";
 import * as SC from "../../Pages/AllGamesPage/AllGamesPageStyles"
 
 import AllGamesItem from "./AllGamesItem";
 
 const AllGamesList = ({ games }) => {
 
+  const [favorites, setFavorites] = useState([]);
+  
+  const addLiked = (id) => {
+    setFavorites((prev) => [...prev, id]);
+  };
 
-
+  const removeLiked = (id) => {
+    
+    setFavorites(favorites.filter((el) => el !== id));
+  
+  }
+// // const likedGames = games.filter(el => favorites.includes(el.id))
+//   useEffect(() => {
+//     localStorage.setItem("favorites", favorites);
+   
+//   }, [favorites]);
+  
   return (
     <SC.AllGamesList>
       {games.map(
@@ -19,6 +35,9 @@ const AllGamesList = ({ games }) => {
           parent_platforms,
         }) => (
           <AllGamesItem
+            favorites={favorites}
+            addLiked={addLiked}
+            removeLiked={removeLiked}
             image={background_image}
             key={id}
             name={name}

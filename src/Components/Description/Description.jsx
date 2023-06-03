@@ -1,8 +1,4 @@
 import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
 
@@ -10,16 +6,16 @@ import * as SC from "./DescriptionStyles";
 
 function Description({ description }) {
   return (
-    <Accordion allowZeroExpanded>
-      <AccordionItem>
-        <AccordionItemHeading>
-          <AccordionItemButton>Description</AccordionItemButton>
-        </AccordionItemHeading>
+    <SC.Container allowZeroExpanded>
+      <SC.Item>
+        <SC.Heading>
+          <SC.Button>Description</SC.Button>
+        </SC.Heading>
         <AccordionItemPanel>
           <SC.DescriptionText>{description}</SC.DescriptionText>
         </AccordionItemPanel>
-      </AccordionItem>
-    </Accordion>
+      </SC.Item>
+    </SC.Container>
   );
 }
 

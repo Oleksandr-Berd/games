@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as SC from "../../Pages/AllGamesPage/AllGamesPageStyles"
 
 import AllGamesItem from "./AllGamesItem";

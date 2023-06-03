@@ -15,6 +15,8 @@ const SearchForm = () => {
   useEffect(() => {
     let timer;
     if (query) {
+
+    
       timer = setTimeout(() => {
         search(query);
         navigate("all");

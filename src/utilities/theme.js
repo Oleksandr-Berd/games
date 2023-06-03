@@ -1,5 +1,22 @@
 const theme = {
-  spacing: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 64, 128, 256, 312, 512],
+  space: [
+    "0px",
+    "4px",
+    "8px",
+    "12px",
+    "16px",
+    "20px",
+    "24px",
+    "28px",
+    "32px",
+    "36px",
+    "64px",
+    "128px",
+    "256px",
+    "312px",
+    "512px",
+  ],
+
   percentage: [
     "10%",
     "15%",
@@ -13,6 +30,34 @@ const theme = {
     "90%",
     "100%",
   ],
+
+  size: {
+    L: "72px",
+    XM: "36px",
+    M: "24px",
+    S: "20px",
+    XS: "16px",
+  },
+
+  color: {
+    transparent: "transparent",
+    main: "#0F0F0F",
+    text: "#E4E4D4",
+    logo: "#d92229",
+    hover: "#D48215",
+    average: "#ffd700",
+    high: "#3CB371",
+    poor: "#FF5733",
+    rate: "#808080",
+    item: "#555555",
+  },
+
+  fontFamily: {
+    title: "Caveat",
+    text: "Montserrat",
+  },
+
+  spacing: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 64, 128, 256, 312, 512],
 
   transition: {
     color: "color 300ms ease",
@@ -42,19 +87,6 @@ const theme = {
   background: {
     bloody: "linear-gradient(to bottom, #0f0f0f, #870000, #0f0f0f)",
     bloodyText: "linear-gradient(to right, #f00, #800)",
-  },
-
-  color: {
-    transparent: "transparent",
-    main: "#0F0F0F",
-    text: "#E4E4D4",
-    logo: "#d92229",
-    hover: "#D48215",
-    average: "#ffd700",
-    high: "#3CB371",
-    poor: "#FF5733",
-    rate: "#808080",
-    item: "#555555",
   },
 
   listText: {

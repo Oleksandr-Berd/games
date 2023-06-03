@@ -1,19 +1,27 @@
-import Accordion from "react-bootstrap/Accordion";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
 
-import * as SC from "./DescriptionStyles"
+import * as SC from "./DescriptionStyles";
 
 function Description({ description }) {
   return (
-    <SC.AccordionDescriptionTitle
-      defaultActiveKey="0"
-      alwaysOpen={false}
-    >
-      <SC.AccordionDescription eventKey="0">
-        <Accordion.Header>Description</Accordion.Header>
-        <Accordion.Body>{description}</Accordion.Body>
-      </SC.AccordionDescription>
-    </SC.AccordionDescriptionTitle>
+    <Accordion allowZeroExpanded>
+      <AccordionItem>
+        <AccordionItemHeading>
+          <AccordionItemButton>Description</AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+          <SC.DescriptionText>{description}</SC.DescriptionText>
+        </AccordionItemPanel>
+      </AccordionItem>
+    </Accordion>
   );
 }
 
 export default Description;
+

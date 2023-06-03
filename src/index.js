@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

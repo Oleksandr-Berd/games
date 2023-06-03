@@ -1,7 +1,7 @@
 {
   "data": {
     "overall": [
-      { "destination": "home", "name": "Home" },
+      { "destination": "/", "name": "Home" },
       { "destination": "reviews", "name": "Reviews" },
       { "destination": "user", "name": "User" },
       { "destination": "new", "name": "New Realizes" },

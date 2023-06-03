@@ -18,7 +18,6 @@ const ScreenShots = lazy(() => import("./Components/Screenshots/Screenshots"));
 
 function App() {
 
-  
   return (
     <>
       <GlobalStyle />
@@ -26,7 +25,6 @@ function App() {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="home" element={<HomePage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="signin" element={<SignInPage />} />
             <Route path="all" element={<AllGamesPage />} />
